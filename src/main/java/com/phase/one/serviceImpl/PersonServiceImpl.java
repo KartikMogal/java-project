@@ -1,5 +1,8 @@
 package com.phase.one.serviceImpl;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +29,13 @@ public class PersonServiceImpl implements PersonService{
 		return personRepo.save(person);
 	} 
 	
+	@Override
+	public List<Person> getAllPerson() {
+		return personRepo.findAll();
+	}
+
+	@Override
+	public Optional<Person> getById(int id) {
+		return personRepo.findById(id);
+	}
 }
